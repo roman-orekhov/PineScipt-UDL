@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--//
+File name:            PineScript.xml
+Description:          PineScript function list
+Supported version:    Pine V6 - January 2026 Version
+Created by:           Roman Orekhov
+Released:             2026-03-10
+License:              MIT
+//-->
+<NotepadPlus>
+	<functionList>
+		<parser displayName="PineScript" id="PineScript">
+			<classRange	mainExpr="(?m-i)^(export\s+)?type\s+\K.*?(?=[\r\n]\S|\Z)">
+				<className>
+					<nameExpr expr="\w+"/>
+				</className>
+				<function mainExpr="(?m-is)^ {4}\K.+">
+					<functionName>
+						<funcNameExpr expr=".*"/>
+					</functionName>
+				</function>
+			</classRange>
+			<function mainExpr="(?m-i)^(export\s+)?(method\s+)?\w+\s*\([^\)]*?\)\s*=&gt;">
+				<functionName>
+					<nameExpr expr="(?-is)\w+\s*\([^\)]*?\)"/>
+				</functionName>
+				<className>
+					<nameExpr expr="(?-i)method\s*\w+\s*\(\s*\K(?-is)[\w.&lt;&gt;]+"/>
+				</className>
+			</function>
+		</parser>
+	</functionList>
+</NotepadPlus>
