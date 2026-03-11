@@ -42,3 +42,4 @@ I believe you can just unpack the folders from the downloaded repo zip into the 
 1. My UDL supports coloring of `str.format` placeholders. This can malfunction if you construct format strings from other strings. Also if you type `{` by mistake anywhere in the code the effects would be unexpected and probably funny. If this additional feature gets in your way, disable it buy going to NPP-Language-User Defined Language-Define Your Language-PineScript-Operators & Delimiters and removing `{` and `}` from `Delimiter 3`
 1. Comments ending in `, ` may trigger erroneous coloring of the left hand side of the following assignment
 1. `@version=` isn't bolded like other directives because of UDL limitations.
+1. Floats ending in `.` are not highlighted because of UDL limitations.
